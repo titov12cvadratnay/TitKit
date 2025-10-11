@@ -1,147 +1,48 @@
-<!DOCTYPE html>
-<html lang="ru">
+<!doctype html>
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Butfrus</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link href="/src/output.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
-        
-        *{
-            font-family: Arial, Helvetica, sans-serif;
-            font-size:  clamp(10px , 5vw , 20px);
-        }
-
-        #ap{
-            display: flex;
-            justify-content: center; 
-            align-items: center;
-            height: 130px;
-            background-color: rgb(255, 245, 139);
-        }
-
-        .title{
-            font-size: clamp(3px , 7vw , 55px);
-        }
-
-        #ap , a {
-            padding: 10px;
-            top: 50px;
-        }
-
-        .regi{
-            display: flex;
-            flex-direction: column;
-        }
-
-        .regi , input {
-                padding: 10px;
-                margin-bottom: 15px;
-                border: 1px solid #a9a9a9;
-                border-radius: 4px;
-                font-size: 16px;
-        }
-
-        .regi , button {
-            color: rgb(0, 0, 0);
-            background-color: rgb(255, 245, 139);
-        }
-
-        .p-1 {
-            display: flex;
-            justify-content: center; 
-            align-items: center;
-            padding: clamp( 10px , 1vw , 20px);
-        }
-
-        .none{
-            position: none;
-        }
-
-        button{
-            height: clamp(150px ,30vw , 200px);
-            width: clamp(150px ,30vw , 200px);
-            border-radius: 100% 100% 100% 100% / 100%;
-            border: none;
-        }
-
-        .submit-button{
-            height: clamp(100px ,2vw , 150px);
-            width: clamp(200px ,30vw , 300px);
-            border-radius: 20% 20% 20% 20% / 20%;
-            border: none;
-        }
-
-        .registration-form {
-            display: flex;
-            flex-direction: column;
-        }
-
+	body { 
+		-ms-user-select: none; 
+		-moz-user-select: none; 
+		-webkit-user-select: none; 
+		user-select: none; 
+	}
     </style>
-
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script type="importmap">
-    {
-    "imports": {
-      "vue": "https://unpkg.com/vue@3/dist/vue.esm-browser.js"
-    }
-    }
-    </script>
-
-    <script>
-        async function regf(event) {
-            event.preventDefault(); 
-            alert("Login")
-            }
-
-    </script>
-
-    <script type="module">
-        import { createApp } from 'vue'
-
-        const acaunt = true
-
-        createApp({
-            data() {
-                return {
-                    titleClass: 'title',
-                    login: false
-                }
-            },
-            methods: {
-                loginDiNone() {
-                    this.login = true
-                }
-            }
-        }).mount('#app')   
-
-</script>
-
 </head>
 <body>
-    <div id="app">
-        <p>by Kit ------------ Button For Us --------- Кнопка Для Нас</p>
-        <div id="ap">
-            <h1 :class="titleClass" >Butfrus</h1> 
-            <a href="https://www.yandex.ru/search/?text=%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B9+facebook&lr=10719" style="text-decoration: none; color: black;">О нас</a>
-            <a href="https://www.yandex.ru/search/?text=%D1%81%D1%82%D0%B0%D1%80%D1%8B%D0%B9+facebook&lr=10719" style="text-decoration: none; color: black;">Акаунт</a>
+    <p class="font-extralight" style="font-size: 5px;">Tit Kit titov</p>
+    <div class="p-8">   
+        <h2 class="text-4xl sm:text-8xl text-gray-950 tracking-tighter font-black">Tit Kit developer</h1>
+        <div class="sm:text-1xl mt-5 p-2 text-gray-950 font-mono">Меня зовут Кит . Мне просто интересно изучать программирование. В основном использую Java Script :)</div>
+        <div class="rounded-md p-0 ">
+            <div class="sm:text-2xl mt-5 pl-5 font-mono"></div>
+            <div class="flex justify-start">
+                <div class="bg-gray-300 rounded-md p-2 m-2 shadow-lg shadow-black">
+                    <a href="https://gitverse.ru/KitTit">
+                        <img class="h-16 md:h-20" s="https://gitverse.ru/KitTit" src="https://static.cnews.ru/img/book/2025/06/04/gitverse.svg">
+                    </a>
+                </div>
+                <div class="bg-gray-300 rounded-md p-2 m-2 shadow-lg shadow-black">
+                    <a href="https://github.com/titov12cvadratnay">
+                        <img class="h-16 md:h-20" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/1200px-Octicons-mark-github.svg.png">
+                    </a>
+                </div>  
+                <div class="bg-gray-300 rounded-md p-2 m-2 shadow-lg shadow-black">
+                <a href="@titovchik_K">
+                    <img class="h-16 md:h-20" src="https://telegram.org/img/t_logo.png">
+                </a>
+                </div>
+            </div>
+            </div>
         </div>
-        <h2 >Это классический кликер. Самый лучший в мире. Проще быть не может</h2>
-        <h1 align="center" class="p-1">Клики : {{click}}</h1>
-        <div class="p-1" v-if="login">
-            <button class="p-1" onclick=ifAcaunt()>Кнопка</button>
-        </div>
-        <form id="registration-form" class="registration-form" v-if="!login">
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="password">Пароль:</label>
-            <input type="password" id="password" name="password" required>
-
-            <label for="first_name">Имя:</label>
-            <input type="text" id="first_name" name="first_name" required>
-
-            <button type="submit" id="reg-button" class="submit-button" @click=loginDiNone() onclick="regf(event)">Зарегистрироваться</button>    
-        </form>
     </div>
+
 </body>
 </html>
+
